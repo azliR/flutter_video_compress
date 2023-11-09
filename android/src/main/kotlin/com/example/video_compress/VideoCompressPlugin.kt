@@ -89,7 +89,7 @@ class VideoCompressPlugin : MethodCallHandler, FlutterPlugin {
                 val outputWidth = call.argument<Int>("outputWidth")
                 val outputHeight = call.argument<Int>("outputHeight")
 
-                val tempDir: String = context.getExternalFilesDir("video_compress")!!.absolutePath
+                val tempDir: String = context.cacheDir.absolutePath + File.separator + "video_compress"
                 val out = SimpleDateFormat("yyyy-MM-dd hh-mm-ss").format(Date())
                 val destPath: String = tempDir + File.separator + "VID_" + out + path.hashCode() + ".mp4"
 
